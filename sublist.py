@@ -18,6 +18,29 @@ SUPERLIST = 2
 EQUAL = 0
 UNEQUAL = 3
 
+def check(smaller, bigger):
+    sml = len(smaller)
+    big = len(bigger)
+    
+    for i in range(big - sml):
+        if sml == bigger[i:i+sml]:
+            return True
+    
+    return False
 
 def sublist(list_one, list_two):
-    pass
+    if list_one == list_two:
+        return EQUAL
+    elif len(list_one) > len(list_two):
+        if len(list_two) == 0:
+            return SUPERLIST
+        elif(check(list_two, list_one)):
+            return SUPERLIST
+    else:
+        if len(list_one) == 0:
+            return SUBLIST
+        elif (check(list_one, list_two)):
+            return SUBLIST
+        else:
+            return UNEQUAL
+    
