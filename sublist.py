@@ -23,7 +23,6 @@ def check(smaller, bigger):
     big = len(bigger)
     
     for i in range(big - sml + 1):
-        print(bigger[i:i+sml])
         if smaller == bigger[i:i+sml]:
             return True
     
