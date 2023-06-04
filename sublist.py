@@ -22,8 +22,9 @@ def check(smaller, bigger):
     sml = len(smaller)
     big = len(bigger)
     
-    if smaller in bigger:
-        return True
+    for i in range(big - sml + 1):
+        if smaller == bigger[i:i+sml]:
+            return True
     return False
 
 def sublist(list_one, list_two):
